@@ -1,0 +1,51 @@
+name: Regenerate Space Calendar
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Daily at 01:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'calendar.py'
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate calendar
+        env:
+          FLARIENT_API_URL: ${{ secrets.FLARIENT_API_URL }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: python calendar.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Flarient Calendar Bot"
+          git config user.email "bot@flarient.com"
+          git add flarient-space-calendar.ics
+          git diff --cached --quiet || git commit -m "Calendar regenerated $(date -u +%Y-%m-%d)"
+          git push || echo "Nothing to push"
+
+      - name: Summary
+        run: |
+          echo "## Space Calendar Regenerated" >> ${{ github.step_summary }}
+          echo "" >> ${{ github.step_summary }}
+          echo "📅 ICS file: `flarient-space-calendar.ics`" >> ${{ github.step_summary }}
+          echo "🔗 Subscribe: https://flarientglobal.github.io/flarient-space-calendar/flarient-space-calendar.ics" >> ${{ github.step_summary }}

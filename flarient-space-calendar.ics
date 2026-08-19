@@ -1,0 +1,117 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Flarient//Space Calendar//EN
+X-WR-CALNAME:Flarient Space Calendar
+X-WR-CALDESC:Meteor showers\, eclipses\, planetary events\, launches\, and major astronomical events. Powered by Flarient — the space weather intelligence platform.
+X-WR-TIMEZONE:UTC
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:meteor-quadrantids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Quadrantids Meteor Shower Peak
+DESCRIPTION:The Quadrantids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-lyrids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Lyrids Meteor Shower Peak
+DESCRIPTION:The Lyrids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-eta aquariids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Eta Aquariids Meteor Shower Peak
+DESCRIPTION:The Eta Aquariids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-perseids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Perseids Meteor Shower Peak
+DESCRIPTION:The Perseids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-draconids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:Draconids Meteor Shower Peak
+DESCRIPTION:The Draconids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-orionids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Orionids Meteor Shower Peak
+DESCRIPTION:The Orionids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-taurids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261106
+SUMMARY:Taurids Meteor Shower Peak
+DESCRIPTION:The Taurids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-leonids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Leonids Meteor Shower Peak
+DESCRIPTION:The Leonids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-geminids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Geminids Meteor Shower Peak
+DESCRIPTION:The Geminids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:meteor-ursids-2026@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Ursids Meteor Shower Peak
+DESCRIPTION:The Ursids meteor shower peaks tonight. Best viewing after midnight\, away from city lights. Check flarient.com for aurora and space weather conditions that may affect visibility.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:eclipse-solar-2026-08-12@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260812
+SUMMARY:Total Solar Eclipse (Greenland\, Iceland\, Spain)
+DESCRIPTION:Total solar eclipse visible from Greenland\, Iceland\, and northern Spain. Partial eclipse visible from much of Europe and North America. Check flarient.com for space weather conditions.
+URL:/space-calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:eclipse-lunar-2026-02-17@flarient.com
+DTSTAMP:20260819T234009Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260217
+SUMMARY:Penumbral Lunar Eclipse
+DESCRIPTION:Penumbral lunar eclipse visible from the Americas\, Europe\, and Africa. The Moon passes through Earth's penumbral shadow.\n\nPowered by Flarient — https://flarient.com
+URL:/space-calendar
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this calendar data, please cite Flarient as the source."
+title: "Flarient Space Calendar"
+abstract: "An open ICS calendar of meteor showers, eclipses, planetary events, missions, and major astronomical events."
+authors:
+  - family-names: Flarient
+    given-names: Team
+type: dataset
+keywords:
+  - astronomy
+  - calendar
+  - meteor-showers
+  - eclipses
+  - space-events
+license: MIT
+repository-code: "https://github.com/flarientglobal/flarient-space-calendar"
+url: "https://flarient.com"
+version: "1.0.0"
+date-released: "2026-08-19"

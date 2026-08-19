@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'calendar.py'
+      - 'generate_calendar.py'
 
 permissions:
   contents: write
@@ -33,7 +33,7 @@ jobs:
         env:
           FLARIENT_API_URL: ${{ secrets.FLARIENT_API_URL }}
           GITHUB_WORKSPACE: ${{ github.workspace }}
-        run: python calendar.py
+        run: python generate_calendar.py
 
       - name: Commit and push
         run: |

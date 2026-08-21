@@ -12,7 +12,7 @@ Regenerates flarient-space-calendar.ics with:
 Users subscribe once → Flarient lives permanently in their calendar.
 """
 
-import os, sys, json, datetime, textwrap
+import os, sys, json, datetime, textwrap, re
 from pathlib import Path
 import requests
 
@@ -78,8 +78,47 @@ def make_event(uid, title, description, start_dt, end_dt, url=None, all_day=Fals
 
 
 # ── Fetch events from Flarient ────────────────────────────────────────────
+def fetch_launches():
+    """Fetch upcoming launches from the Launch Library 2 API (free, no API key, no credits)."""
+    log("Fetching upcoming launches from Launch Library 2...")
+    launches = []
+    try:
+        resp = requests.get(
+            "https://ll.thespacedevs.com/2.2.0/launch/upcoming/",
+            params={"limit": 30, "mode": "list"},
+            timeout=30,
+            headers={"User-Agent": "Flarient/1.0 (space weather calendar)"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        for launch in data.get("results", []):
+            name = launch.get("name", "Rocket Launch")
+            net = launch.get("net", "")  # No Earlier Than
+            if not net:
+                continue
+            provider = (launch.get("launch_service_provider") or {}).get("name", "")
+            rocket = (launch.get("rocket") or {}).get("configuration", {}).get("name", "")
+            location = (launch.get("pad") or {}).get("location", {}).get("name", "")
+            desc_parts = [p for p in [provider, rocket, location] if p]
+            desc = " · ".join(desc_parts)
+            uid_slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")[:60]
+            launches.append({
+                "uid": f"launch-{uid_slug}-{net[:10]}",
+                "title": f"🚀 {name}",
+                "description": f"{desc}\n\nPowered by Flarient — https://flarient.com",
+                "start": net,
+                "end": net,
+                "all_day": False,
+                "url": f"{FLARIENT_API}/space-calendar",
+            })
+        log(f"  {len(launches)} launches from Launch Library 2")
+    except Exception as e:
+        log(f"  Launch fetch failed: {e}")
+    return launches
+
+
 def fetch_events():
-    """Fetch all calendar-worthy events from Flarient API."""
+    """Fetch all calendar-worthy events from Flarient API + Launch Library 2 + static data."""
     log("Fetching events from Flarient API...")
     events = []
     try:
@@ -90,6 +129,9 @@ def fetch_events():
         log(f"  {len(events)} events from Flarient API")
     except Exception as e:
         log(f"  API fetch failed: {e}, using static data")
+
+    # Fetch launches directly from Launch Library 2 (free, no API key, no credits)
+    events.extend(fetch_launches())
 
     # Always include static astronomical events as fallback/supplement
     events.extend(get_static_events())

@@ -105,7 +105,9 @@ def fetch_launches():
             launches.append({
                 "uid": f"launch-{uid_slug}-{net[:10]}",
                 "title": f"🚀 {name}",
-                "description": f"{desc}\n\nPowered by Flarient — https://flarient.com",
+                "description": f"{desc}
+
+Powered by Flarient — https://flarient.com",
                 "start": net,
                 "end": net,
                 "all_day": False,
